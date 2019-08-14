@@ -8,6 +8,7 @@ public class MeuPrimeiroProjetoSpringApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MeuPrimeiroProjetoSpringApplication.class, args);
+		System.out.print('Esta é uma alteração no projeto');
 	}
 
 }
