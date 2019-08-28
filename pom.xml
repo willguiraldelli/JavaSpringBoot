@@ -40,13 +40,13 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			
+
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			
+
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
 		<dependency>
@@ -55,10 +55,10 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
- 			<groupId>org.springframework.boot</groupId>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
- 			<version>2.1.4.RELEASE</version>
-</dependency>
+			<version>2.1.4.RELEASE</version>
+		</dependency>
 	</dependencies>
 
 	<build>
