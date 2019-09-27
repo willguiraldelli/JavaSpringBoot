@@ -24,14 +24,10 @@ public class SenhaUtils {
 	 * @param senhaEncoded
 	 * @return boolean
 	 */
-
-	/*
-	 * O metodo a seguir verificar se a senha é valida, validando se as senhas
-	 * criptografadas significam a senha
-	 */
-
 	public static boolean senhaValida(String senha, String senhaEncoded) {
 		BCryptPasswordEncoder bCryptEncoder = new BCryptPasswordEncoder();
+		
 		return bCryptEncoder.matches(senha, senhaEncoded);
 	}
+
 }

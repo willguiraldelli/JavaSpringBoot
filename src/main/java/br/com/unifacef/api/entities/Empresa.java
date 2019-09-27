@@ -2,7 +2,6 @@ package br.com.unifacef.api.entities;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -15,12 +14,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "empresa")
 public class Empresa implements Serializable {
 	private static final long serialVersionUID = -367604013937942025L;
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -37,12 +36,8 @@ public class Empresa implements Serializable {
 	@Column(name = "data_atualizacao", nullable = false)
 	private Date dataAtualizacao;
 
-	// Objeto empresa tem relação com funcionario (1:N). É uma relação mapeada por
-	// 'empresa'.
-	// Fetch - lazy(preguiçoso) não retorna os funcionarios da empresa
-	// Cascade - Quando matar uma empresa, mata todos os funcionarios
-	@OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<Funcionario> funcionarios;
+	//@OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	//private List<Funcionario> funcionarios;
 
 	public Long getId() {
 		return id;
@@ -84,13 +79,13 @@ public class Empresa implements Serializable {
 		this.dataAtualizacao = dataAtualizacao;
 	}
 
-	public List<Funcionario> getFuncionarios() {
-		return funcionarios;
-	}
+	//public List<Funcionario> getFuncionarios() {
+	//	return funcionarios;
+	//}
 
-	public void setFuncionarios(List<Funcionario> funcionarios) {
-		this.funcionarios = funcionarios;
-	}
+	//public void setFuncionarios(List<Funcionario> funcionarios) {
+//		this.funcionarios = funcionarios;
+	//}
 
 	@PreUpdate
 	public void preUpdate() {
@@ -107,9 +102,8 @@ public class Empresa implements Serializable {
 	@Override
 	public String toString() {
 		return "Empresa [id=" + id + ", razaoSocial=" + razaoSocial + ", cnpj=" + cnpj + ", dataCriacao=" + dataCriacao
-				+ ", dataAtualizacao=" + dataAtualizacao + ", funcionarios=" + funcionarios + "]";
+				+ ", dataAtualizacao=" + dataAtualizacao + "]";
 	}
 	
 	
-
 }
